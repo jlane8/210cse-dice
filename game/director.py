@@ -46,6 +46,8 @@ class Director:
         """
         roll_dice = input("Roll dice? [y/n] ")
         self.is_playing = (roll_dice == "y")
+        
+        # if player chooses to quit rolling, show final score
         if not self.is_playing:
             print(f"Final score is {self.total_score}\n")
        
@@ -58,13 +60,17 @@ class Director:
         if not self.is_playing:
             return 
 
-        self.score = 0 # added to correct inaccurate score additions
+        # added to correct inaccurate score additions
+        self.score = 0
+
+        # original code from incomplete-dice
         for i in range(len(self.dice)):
             die = self.dice[i]
             die.roll()
             self.score += die.points
         
-        # changed - instead of just adding score from this round, check to see if zero, if so, zero total
+        # changed - instead of just adding score from this round, check to see 
+        # if zero, if so, zero total so player knows they busted
         if self.score > 0:
             self.total_score += self.score
         else:
@@ -86,6 +92,12 @@ class Director:
 
         print(f"You rolled: {values}")
         print(f"Your score is: {self.total_score}\n")
-        self.is_playing = (self.score > 0) # changed so game would end if current round score is zero and show final score
+        
+        # changed so game would end if current round score is zero and show 
+        # final score
+        self.is_playing = (self.score > 0) 
+
+        # added to let player know the roll failed to give any points, score is 
+        # zero, game over
         if not self.is_playing:
             print("Fail. Score is zero.\n")
