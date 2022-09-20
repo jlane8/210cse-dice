@@ -2,6 +2,7 @@
 Author: Jerry Lane
 This class is the model for a six sided die.
 """
+# import random module for random number generation
 import random
 
 # TODO: Implement the Die class as follows...
