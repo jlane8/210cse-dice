@@ -1,3 +1,7 @@
+"""File: die.py
+Author: Jerry Lane
+This class is the model for a six sided die.
+"""
 import random
 
 # TODO: Implement the Die class as follows...
@@ -6,8 +10,7 @@ import random
 class Die:
     """A small cube with a different number of spots on each of its six sides.
 
-    The responsibility of Die is to keep track of the side facing up and calculate the points for 
-    it.
+    The responsibility of Die is to keep track of the side facing up and calculate the points for it.
 
     Attributes:
         value (int): The number of spots on the side facing up.
